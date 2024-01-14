@@ -78,3 +78,18 @@ svg {
 rect {
 	rx: 0.01rem;
 }
+
+.buttons {
+	display: flex;
+}
+
+button {
+	cursor: pointer;
+	border: 1px solid #3498db;
+	background-color: transparent;
+	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+	margin: 1vw;
+	border-radius: 0.3rem;
+}
+
+/* outline: 1px solid red; */

@@ -1,26 +1,27 @@
 <script lang="ts">
 	import { PlayerStats } from '../PlayerStats';
 	import PageTransition from '../PageTransition.svelte';
-	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
 	export let currentPage: number;
 	player.setStats({ maxPoints: 10, workedPoints: 0, giftedPoints: 1, workAmount: 0 });
-
-	let players = [player];
 </script>
 
 <PageTransition>
 	<div class="parent">
 		<div class="info">
-			<p>We all have our limitations.</p>
+			<p style="height: 60vh; line-height: 5vh;">
+				First, find the fields where you have the opportunity for success.<br />
+				This comes down to luck. It's the way life goes sometimes. <br />
+				Then, pick one of those fields where you also have the talent to make your effort worth it.<br
+				/>
+			</p>
 		</div>
-		<Points {players} />
 	</div>
 </PageTransition>
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 3vh;
 	}
 </style>

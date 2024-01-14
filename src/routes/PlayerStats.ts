@@ -14,7 +14,7 @@ export class PlayerStats {
 		giftedPoints = 1,
 		workFrequency = 1000,
 		workAmount = 0.1,
-		forgetAmount = 0.001,
+		forgetAmount = 0,
 		master = false,
 		stop = false
 	} = {}) {
@@ -68,10 +68,5 @@ export class PlayerStats {
 			this.maxPoints - this.giftedPoints,
 			this.workedPoints + this.workAmount
 		);
-	}
-
-	reset() {
-		this.workedPoints = 0;
-		this.master = false;
 	}
 }

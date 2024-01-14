@@ -8,15 +8,27 @@
 	player.setStats({
 		maxPoints: 10,
 		workedPoints: 0,
-		giftedPoints: 1,
-		workAmount: 2,
+		giftedPoints: 8,
+		workAmount: 0.5,
 		forgetAmount: 0
 	});
 
-	let players = [player];
+	const opponent = new PlayerStats({
+		maxPoints: 10,
+		workedPoints: 0,
+		giftedPoints: 1,
+		workFrequency: 400,
+		workAmount: 0.1,
+		forgetAmount: 0
+	});
 
-	let isMaster = player.master;
-	$: isMaster = player.master;
+	let isMaster = false;
+	$: {
+		isMaster = player.master;
+		opponent.stop = isMaster;
+	}
+
+	let players = [player, opponent];
 </script>
 
 <PageTransition>
@@ -24,11 +36,11 @@
 		<div class="info">
 			{#if isMaster == true}
 				<p>
-					Great.<br />
-					Success = luck + talent * work
+					Nice.<br />
+					They didn't stand a chance.
 				</p>
 			{:else}
-				<p>But you aren't there yet. Let's work towards it.</p>
+				<p>Show them what you've got.</p>
 				<h4>Press [Space] to put in some work</h4>
 			{/if}
 		</div>
@@ -38,6 +50,6 @@
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 3vh;
 	}
 </style>

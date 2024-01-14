@@ -4,6 +4,7 @@
 	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
+	export let currentPage: number;
 	player.setStats({ maxPoints: 10000, workedPoints: 0, giftedPoints: 1, workAmount: 0 });
 
 	let players = [player];
@@ -13,11 +14,10 @@
 	<div class="parent">
 		<div class="info">
 			<p>
-				The green part is something you inherently have.<br />
-				Money?<br />
-				Connections?<br />
-				How about health?<br />
-				Anything that will help you along the way but doesn't require talent or work.
+				The green bar stands for luck.<br />
+				Inheritance, family connections, natural ability, coicidences, you name it.<br />
+				Things that will help you along the way but don't require talent or work.<br />
+				You can't affect this.
 			</p>
 		</div>
 		<Points {players} />
@@ -26,6 +26,6 @@
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 2vh;
 	}
 </style>

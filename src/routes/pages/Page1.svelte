@@ -4,6 +4,7 @@
 	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
+	export let currentPage: number;
 	player.setStats({ maxPoints: 10000, workedPoints: 0, giftedPoints: 1, workAmount: 0 });
 
 	let players = [player];
@@ -13,9 +14,8 @@
 	<div class="parent">
 		<div class="info">
 			<p>
-				Think of the height of the bar at the bottom as representing something desirable.<br />
-				Maybe your abilities at math? Your skill in cooking? Perhaps your knowledge about history.<br
-				/>
+				The height of the bar at the bottom represents success in something desirable.<br />
+				Your abilities at math, skill in tennis or perhaps your knowledge about history.<br />
 				Whatever it is that matters to you.<br />
 				You'd like to get better.
 			</p>
@@ -26,6 +26,6 @@
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 2vh;
 	}
 </style>

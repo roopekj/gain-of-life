@@ -4,6 +4,7 @@
 	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
+	export let currentPage: number;
 	player.setStats({ maxPoints: 10000, workedPoints: 0, giftedPoints: 1, workAmount: 0 });
 
 	let players = [player];

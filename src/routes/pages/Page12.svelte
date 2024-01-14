@@ -13,14 +13,16 @@
 <PageTransition>
 	<div class="parent">
 		<div class="info">
-			<p>We all have our limitations.</p>
+			<p>
+				That's a lot of work for very little success.<br />
+				Let's check in on your competition.
+			</p>
 		</div>
-		<Points {players} />
 	</div>
 </PageTransition>
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 3vh;
 	}
 </style>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { PlayerStats } from '../PlayerStats';
 	import PageTransition from '../PageTransition.svelte';
-	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
 	export let currentPage: number;
@@ -13,14 +12,17 @@
 <PageTransition>
 	<div class="parent">
 		<div class="info">
-			<p>We all have our limitations.</p>
+			<p>
+				Feels bad to be on the losing side.<br />
+				Even worse, nothing you could've done would have changed the outcome.<br />
+				So why join that competition?
+			</p>
 		</div>
-		<Points {players} />
 	</div>
 </PageTransition>
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 3vh;
 	}
 </style>

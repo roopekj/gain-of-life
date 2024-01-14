@@ -4,6 +4,7 @@
 	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
+	export let currentPage: number;
 	player.setStats({
 		maxPoints: 10,
 		workedPoints: 0,
@@ -12,24 +13,10 @@
 		forgetAmount: 0
 	});
 
-	const opponent = new PlayerStats({
-		maxPoints: 10,
-		workedPoints: 2,
-		giftedPoints: 1,
-		workFrequency: 3000,
-		workAmount: 0.1,
-		forgetAmount: 0
-	});
-
-	let players = [player, opponent];
+	let players = [player];
 
 	let isMaster = player.master;
-	$: {
-		isMaster = player.master;
-		if (isMaster) {
-			opponent.stop = true;
-		}
-	}
+	$: isMaster = player.master;
 </script>
 
 <PageTransition>
@@ -37,19 +24,17 @@
 		<div class="info">
 			{#if isMaster == true}
 				<p>
-					Congratulations.<br />
-					You won.
+					There you go.<br />
+					A little help goes a long way.
 				</p>
 			{:else}
 				<p>
-					Let's give you some competition.<br />
-					This person is applying to the same university or job.<br />
-					Or maybe they're competing in the same sport or for the same partner.<br />
-					However, they're not particularly talented, hard-working or well positioned for it.<br />
-					Show them what you've got.
+					For all of us, some fields don't require much talent or work.<br />
+					Although your talent remains unchanged, you're lucky to have<br />
+					more opportunities that carry you the rest of the way.<br />
 				</p>
+				<h4>Press [Space] to put in some work</h4>
 			{/if}
-			<h4>Press [Space] to put in some work</h4>
 		</div>
 		<Points {players} />
 	</div>
@@ -57,6 +42,6 @@
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 2.6vh;
 	}
 </style>

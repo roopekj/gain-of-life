@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { PlayerStats } from '../PlayerStats';
 	import PageTransition from '../PageTransition.svelte';
-	import Points from '../Points.svelte';
 
 	export let player: PlayerStats;
 	export let currentPage: number;
@@ -13,14 +12,16 @@
 <PageTransition>
 	<div class="parent">
 		<div class="info">
-			<p>We all have our limitations.</p>
+			<p>
+				Fair enough.<br />
+				So you should just pick the path of least resistance and sleep walk your way to success?
+			</p>
 		</div>
-		<Points {players} />
 	</div>
 </PageTransition>
 
 <style>
 	p {
-		font-size: 2.3vh;
+		font-size: 3vh;
 	}
 </style>
