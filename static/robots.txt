@@ -1,0 +1,3 @@
+# Robots.txt to allow all
+User-agent: *
+Disallow:
